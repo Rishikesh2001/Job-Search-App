@@ -14,14 +14,25 @@ const Home = () => {
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
-          headerLeft: () => {
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />;
-          },
-          headerRight: () => {
-            <ScreenHeaderBtn iconUrl={icons.profile} />;
-          },
+					headerTitle: "",
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
+					),
         }}
       />
+
+			<ScrollView showsVerticalScrollIndicator={false}>
+				<View
+					style={{padding: SIZES.medium, flex: 1}}
+				>
+					<Welcome />
+					<Popularjobs />
+					<Nearbyjobs />
+				</View>
+			</ScrollView>
     </SafeAreaView>
   );
 };
